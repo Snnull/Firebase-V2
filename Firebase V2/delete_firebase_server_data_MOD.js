@@ -74,7 +74,7 @@ module.exports = {
     const data = cache.actions[cache.index];
     const type = parseInt(data.server);
     const varName = this.evalMessage(data.varName, cache);
-    const server = this.getServer(type, varName, cache);
+    const server = await this.getServerFromData(data.server, data.varName, cache);
     const dataName = this.evalMessage(data.dataName, cache);
 
     if (server) {

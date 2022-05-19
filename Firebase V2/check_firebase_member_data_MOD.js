@@ -120,7 +120,7 @@ module.exports = {
     const data = cache.actions[cache.index];
     const type = parseInt(data.member);
     const varName = this.evalMessage(data.varName, cache);
-    const member = this.getMember(type, varName, cache);
+    const member = await this.getMemberFromData(data.member, data.varName, cache);
     const dataName = this.evalMessage(data.dataName, cache);
 
     let result = false;
